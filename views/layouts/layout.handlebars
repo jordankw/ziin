@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LoginApp</title>
+<link rel="stylesheet" href="/css/bootstrap.css" />
+<link rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+    <div id="bodydiv">
+        <div>
+            <nav class="navbar">
+                <h3 class="text-title">
+                <ul>
+                {{#if user}}
+                <a href="/users/logout">
+                    Logout
+                </a>
+                <a href="/">
+                   Dashboard
+                </a>
+                {{else}}
+                <a href="/users/login">
+                    Login
+                </a>
+                <a href="/users/register">
+                    Register
+                </a>
+                {{/if}}
+                
+                </ul>
+                </h3>
+            </nav>
+        </div>
+
+        <div class="col-lg-12">
+            {{#if success_msg}}
+                <div class="alert alert-success">
+                {{success_msg}}
+                </div>
+            {{/if}}
+            {{#if error_msg}}
+                <div class="alert alert-danger">
+                {{error_msg}}
+                </div>
+            {{/if}}
+            {{#if error}}
+                <div class="alert alert-danger">
+                {{error}}
+                </div>
+            {{/if}}
+
+            {{{body}}}
+<!--
+            <form class="form-signin">
+                <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="checkbox mb-3">
+                    <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+            </form>
+-->
+
+
+        </div>
+
+
+    </div>
+    
+
+</body>
+
+</html>
